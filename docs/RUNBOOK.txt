@@ -1,0 +1,170 @@
+========================================================
+ISL SETU - RUN BOOK
+========================================================
+Complete steps to start the project from scratch, including
+one-time Chrome setup needed for camera access over a network
+IP (non-localhost).
+
+--------------------------------------------------------
+PART 0 - FIND YOUR LAPTOP'S CURRENT IP
+(do this FIRST, every session - IP can change each time you
+reconnect to Wi-Fi/hotspot)
+--------------------------------------------------------
+
+Command:
+    ipconfig
+
+Look under the "Wi-Fi" adapter (the one connected to your
+phone's hotspot or shared network) for "IPv4 Address".
+
+Write it down. Replace every <IP> below with this exact value.
+
+--------------------------------------------------------
+PART 1 - ONE-TIME CHROME SETUP
+(per browser/device, redo if IP changes)
+--------------------------------------------------------
+
+Camera access (getUserMedia) is blocked by browsers on plain
+HTTP unless the address is localhost. Since phones/other
+devices must use the network IP, this flag is required on
+EVERY device that will use the camera, including the laptop
+itself if accessed via its own IP.
+
+On laptop (Chrome):
+    1. Go to: chrome://flags/#unsafely-treat-insecure-origin-as-secure
+    2. Set dropdown to "Enabled"
+    3. In the text box, enter exactly: http://<IP>:5173
+    4. Click "Relaunch"
+
+On each phone (Chrome for Android):
+    1. Go to: chrome://flags/#unsafely-treat-insecure-origin-as-secure
+    2. Enable it, enter: http://<IP>:5173
+    3. Tap "Relaunch"
+
+NOTE: If the IP changes later, this must be redone with the
+new IP on every device - old flag entries for a stale IP
+won't help.
+
+--------------------------------------------------------
+PART 2 - STARTING THE PROJECT (every session)
+--------------------------------------------------------
+
+STEP 1: Terminal 1 - Backend
+
+    cd D:\ISL_Setu
+    .\venv311\Scripts\Activate.ps1
+    echo $env:GROQ_API_KEY
+
+Confirm it prints a key starting with gsk_, about 56
+characters long. If blank or wrong:
+
+    [System.Environment]::SetEnvironmentVariable('GROQ_API_KEY', 'your_key_here', 'User')
+
+Then close and reopen PowerShell completely, and redo this
+step.
+
+Start the backend:
+
+    python -m uvicorn services.backend.main:app --host 0.0.0.0 --port 8000 --reload
+
+Wait for:
+    Loading recognizer model...
+    Model loaded. Vocab size: 50
+    Application startup complete.
+
+Leave this terminal running.
+
+STEP 2: Terminal 2 - Frontend
+
+Open a NEW PowerShell window:
+
+    cd D:\ISL_Setu\frontend
+    npm run dev -- --host
+
+Wait for:
+    Local:   http://localhost:5173/
+    Network: http://<IP>:5173/
+
+Leave this terminal running.
+
+STEP 3 (optional): Terminal 3 - Verify backend reachable
+
+    Invoke-RestMethod -Uri http://<IP>:8000/api/health
+
+Expected:
+    status vocab_size
+    ------ ----------
+    ok             50
+
+--------------------------------------------------------
+PART 3 - USING THE APP
+--------------------------------------------------------
+
+On laptop or any phone browser (after Part 1 flag setup):
+
+    1. Go to: http://<IP>:5173
+    2. In "Backend address" field, type EXACTLY (no http://
+       prefix): <IP>:8000
+    3. Click "Reconnect". Confirm "Backend: Connected"
+       (green dot).
+    4. Allow camera permission when prompted.
+    5. Confirm "Camera: ready" and hand skeleton overlay
+       appears when you raise your hand.
+    6. Sign a word, pause hands-down ~1 second -> gloss chip
+       should appear.
+    7. Repeat for more words. Edit chip text, Undo, or Clear
+       as needed.
+    8. Press "Done" -> wait for sentence(s) + spoken audio.
+
+--------------------------------------------------------
+COMMON ISSUES AND FIXES
+--------------------------------------------------------
+
+Symptom: Backend stuck "Connecting..."
+Cause:   Backend address field has http:// prefix
+Fix:     Remove prefix, use <IP>:8000 only
+
+Symptom: "Site can't be reached" from phone
+Cause:   Wrong/stale IP, or firewall
+Fix:     Re-check ipconfig, re-run firewall rules below
+
+Symptom: Camera stuck "Loading camera..."
+Cause:   Chrome flag not set/relaunched for current IP
+Fix:     Redo Part 1 exactly, including Relaunch
+
+Symptom: WebSocket connects/disconnects repeatedly
+Cause:   Known bug, fixed in useRecognitionSocket.js
+         (per-socket intentionalClose flag)
+Fix:     Confirm you have the fixed version of this file
+
+Symptom: ModuleNotFoundError: No module named 'services'
+Cause:   uvicorn run from wrong directory
+Fix:     cd D:\ISL_Setu before running uvicorn
+
+Symptom: Groq 401 Invalid API Key
+Cause:   Corrupted/truncated env var
+Fix:     Re-set with SetEnvironmentVariable, reopen terminal,
+         verify length matches key length
+
+--------------------------------------------------------
+ONE-TIME FIREWALL SETUP
+(only if phone/device still can't reach backend)
+--------------------------------------------------------
+
+Run in an Administrator PowerShell:
+
+    New-NetFirewallRule -DisplayName "ISL Setu Backend" -Direction Inbound -Protocol TCP -LocalPort 8000 -Action Allow -Profile Any
+    New-NetFirewallRule -DisplayName "ISL Setu Frontend" -Direction Inbound -Protocol TCP -LocalPort 5173 -Action Allow -Profile Any
+
+--------------------------------------------------------
+SECURITY NOTE
+--------------------------------------------------------
+
+The Groq API key must never be committed to version control
+or shared in chat logs. If a key has been exposed, revoke it
+at https://console.groq.com/keys and create a new one
+immediately.
+
+========================================================
+END OF RUN BOOK
+========================================================

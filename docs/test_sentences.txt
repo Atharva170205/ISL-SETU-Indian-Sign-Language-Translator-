@@ -1,0 +1,183 @@
+ISL Setu — Candidate Gloss Sentences
+Built entirely from the 50-word trained vocabulary
+=====================================================
+
+VOCABULARY (50 words):
+I, You, He, She, We, They, Mother, Father, Friend, Teacher, Student,
+School, College, Home, Hospital, Doctor, Police, Water, Food, Help,
+Come, Go, Stop, Give, Take, Eat, Drink, Sleep, Work, Study, Learn,
+Want, Need, Like, Know, Understand, What, Where, Who, Why, How,
+Yes, No, Please, Thankyou, Sorry, Hello, Today, Tomorrow, Now
+
+NOTE: Gloss sequences intentionally omit grammar words not in the
+vocabulary (is/am/are, my/your, to, do, happen, etc.). This is
+expected — Groq's job is to infer natural grammar from gloss, so the
+output sentence may contain words that were never signed. That's
+correct pipeline behavior, not an error.
+
+=====================================================
+1. EMERGENCY / MEDICAL
+=====================================================
+
+Gloss: I Help Need
+Expected: I need help.
+
+Gloss: I Hospital Go Want
+Expected: I want to go to the hospital.
+
+Gloss: Doctor Help Please
+Expected: Doctor, please help.
+
+Gloss: I Water Need
+Expected: I need water.
+
+Gloss: Mother Hospital Now
+Expected: My mother is in the hospital now.
+
+Gloss: I Understand No
+Expected: I don't understand.
+
+Gloss: Please Help Come
+Expected: Please come and help.
+
+=====================================================
+2. POLICE / SAFETY
+=====================================================
+
+Gloss: Police Help Need
+Expected: I need police help.
+
+Gloss: I Home Go Want
+Expected: I want to go home.
+
+Gloss: Who You
+Expected: Who are you?
+
+Gloss: What Why
+Expected: What? Why?
+
+Gloss: Stop Please
+Expected: Please stop.
+
+Gloss: I Know No
+Expected: I don't know.
+
+Gloss: He Take Go
+Expected: He took it and left.
+
+Gloss: Help Now Please
+Expected: Please help now.
+
+=====================================================
+3. DAILY NEEDS / HOME
+=====================================================
+
+Gloss: I Food Want
+Expected: I want food.
+
+Gloss: I Eat Drink Want
+Expected: I want to eat and drink.
+
+Gloss: Father Work Go
+Expected: Father went to work.
+
+Gloss: I Sleep Want Now
+Expected: I want to sleep now.
+
+Gloss: We Home Go
+Expected: We are going home.
+
+Gloss: Give Water Please
+Expected: Please give me water.
+
+Gloss: Mother Food Give
+Expected: Mother gave food.
+
+=====================================================
+4. SCHOOL / WORK
+=====================================================
+
+Gloss: I School Go Today
+Expected: I am going to school today.
+
+Gloss: Teacher Student Help
+Expected: The teacher is helping the student.
+
+Gloss: I Study Want
+Expected: I want to study.
+
+Gloss: I Learn Like
+Expected: I like to learn.
+
+Gloss: Tomorrow College Go
+Expected: I am going to college tomorrow.
+
+Gloss: Student Teacher Thankyou
+Expected: The student thanked the teacher.
+
+=====================================================
+5. GREETINGS / SOCIAL
+=====================================================
+
+Gloss: Hello You How
+Expected: Hello, how are you?
+
+Gloss: Thankyou
+Expected: Thank you.
+
+Gloss: Sorry I
+Expected: I am sorry.
+
+Gloss: Friend Come Hello
+Expected: Hello, friend, come in.
+
+Gloss: Hello Friend How
+Expected: Hello friend, how are you?
+
+=====================================================
+6. QUESTIONS
+=====================================================
+
+Gloss: You What Want
+Expected: What do you want?
+
+Gloss: Where You Go
+Expected: Where are you going?
+
+Gloss: Who She
+Expected: Who is she?
+
+Gloss: Why You Sorry
+Expected: Why are you sorry?
+
+Gloss: You Know Who
+Expected: Do you know who?
+
+Gloss: How You Work
+Expected: How is your work?
+
+=====================================================
+7. MIXED / LONGER SENTENCES
+=====================================================
+
+Gloss: I Doctor Go Need Now
+Expected: I need to go to the doctor now.
+
+Gloss: Friend Help Need I
+Expected: I need my friend's help.
+
+Gloss: Mother Father Home Come
+Expected: Mother and father are coming home.
+
+Gloss: Teacher I Understand No
+Expected: Teacher, I don't understand.
+
+Gloss: They School Go Today
+Expected: They are going to school today.
+
+Gloss: I Food Water Need Now
+Expected: I need food and water now.
+
+=====================================================
+END OF LIST
+=====================================================

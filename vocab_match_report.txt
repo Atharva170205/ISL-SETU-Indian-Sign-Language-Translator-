@@ -1,0 +1,55 @@
+Total unique word labels in dataset: 9656
+
+FOUND   'I' -> {'I'} | 129 clips | 15 signers
+FOUND   'You' -> {'You'} | 144 clips | 15 signers
+FOUND   'He' -> {'He'} | 134 clips | 15 signers
+FOUND   'She' -> {'She'} | 137 clips | 15 signers
+FOUND   'We' -> {'We'} | 144 clips | 15 signers
+FOUND   'They' -> {'They'} | 136 clips | 15 signers
+FOUND   'Mother' -> {'Mother'} | 142 clips | 15 signers
+FOUND   'Father' -> {'Father'} | 136 clips | 15 signers
+FOUND   'Friend' -> {'Friend'} | 134 clips | 15 signers
+FOUND   'Teacher' -> {'Teacher'} | 133 clips | 15 signers
+FOUND   'Student' -> {'Student'} | 143 clips | 15 signers
+FOUND   'School' -> {'School'} | 140 clips | 15 signers
+MISSING 'College'
+MISSING 'Home'
+MISSING 'Hospital'
+FOUND   'Doctor' -> {'Doctor'} | 133 clips | 15 signers
+FOUND   'Police' -> {'Police'} | 141 clips | 15 signers
+FOUND   'Water' -> {'Water'} | 134 clips | 15 signers
+FOUND   'Food' -> {'Food'} | 129 clips | 15 signers
+FOUND   'Help' -> {'Help'} | 136 clips | 15 signers
+MISSING 'Come'
+FOUND   'Go' -> {'Go'} | 135 clips | 15 signers
+MISSING 'Stop'
+FOUND   'Give' -> {'Give'} | 135 clips | 15 signers
+MISSING 'Take'
+FOUND   'Eat' -> {'Eat'} | 133 clips | 15 signers
+FOUND   'Drink' -> {'Drink'} | 133 clips | 15 signers
+MISSING 'Sleep'
+FOUND   'Work' -> {'Work'} | 138 clips | 15 signers
+MISSING 'Study'
+MISSING 'Learn'
+MISSING 'Want'
+MISSING 'Need'
+MISSING 'Like'
+MISSING 'Know'
+MISSING 'Understand'
+FOUND   'What' -> {'What'} | 136 clips | 15 signers
+FOUND   'Where' -> {'Where'} | 134 clips | 15 signers
+MISSING 'Who'
+FOUND   'Why' -> {'Why'} | 140 clips | 15 signers
+MISSING 'How'
+FOUND   'Yes' -> {'Yes'} | 136 clips | 15 signers
+FOUND   'No' -> {'No'} | 134 clips | 15 signers
+FOUND   'Please' -> {'Please'} | 136 clips | 15 signers
+FOUND   'Thank You' -> {'Thankyou'} | 139 clips | 15 signers
+MISSING 'Sorry'
+FOUND   'Hello' -> {'Hello'} | 129 clips | 15 signers
+FOUND   'Today' -> {'Today'} | 131 clips | 15 signers
+FOUND   'Tomorrow' -> {'Tomorrow'} | 136 clips | 15 signers
+MISSING 'Now'
+
+Summary: 32 found, 18 missing
+Missing words: ['College', 'Home', 'Hospital', 'Come', 'Stop', 'Take', 'Sleep', 'Study', 'Learn', 'Want', 'Need', 'Like', 'Know', 'Understand', 'Who', 'How', 'Sorry', 'Now']

@@ -1,0 +1,81 @@
+Target: College
+   -> NO SUBSTRING MATCH
+
+Target: Home
+   -> NO SUBSTRING MATCH
+
+Target: Hospital
+   -> NO SUBSTRING MATCH
+
+Target: Come
+   -> candidate: Become
+   -> candidate: Become__000001.h5
+   -> candidate: Become__000001__c545daf6-s029-001_Become.h5
+   -> candidate: Become__000001__c545daf6-s192-007_Become.h5
+   -> candidate: Become__000002.h5
+   -> candidate: Become__000002__c545daf6-s248-000_Become.h5
+   -> candidate: Become__000003.h5
+   -> candidate: Become__000003__c545daf6-s259-013_Become.h5
+   -> candidate: Become__000004.h5
+   -> candidate: Become__000004__c545daf6-s284-019_Become.h5
+
+Target: Stop
+   -> NO SUBSTRING MATCH
+
+Target: Take
+   -> NO SUBSTRING MATCH
+
+Target: Sleep
+   -> NO SUBSTRING MATCH
+
+Target: Study
+   -> NO SUBSTRING MATCH
+
+Target: Learn
+   -> NO SUBSTRING MATCH
+
+Target: Want
+   -> candidate: Wanted
+   -> candidate: Wanted__000001.h5
+   -> candidate: Wanted__000001__c545daf6-s166-000_Wanted.h5
+   -> candidate: Wanted__000002.h5
+   -> candidate: Wanted__000002__c545daf6-s214-000_Wanted.h5
+   -> candidate: Wanted__000003.h5
+   -> candidate: Wanted__000003__c545daf6-s245-001_Wanted.h5
+   -> candidate: Wanted__000004.h5
+   -> candidate: Wanted__000004__c545daf6-s271-013_Wanted.h5
+   -> candidate: Wanted__000005__c545daf6-s295-016_Wanted.h5
+
+Target: Need
+   -> NO SUBSTRING MATCH
+
+Target: Like
+   -> NO SUBSTRING MATCH
+
+Target: Know
+   -> NO SUBSTRING MATCH
+
+Target: Understand
+   -> NO SUBSTRING MATCH
+
+Target: Who
+   -> NO SUBSTRING MATCH
+
+Target: How
+   -> NO SUBSTRING MATCH
+
+Target: Sorry
+   -> NO SUBSTRING MATCH
+
+Target: Now
+   -> candidate: Snow
+   -> candidate: Snow__000001.h5
+   -> candidate: Snow__000001__c545daf6-s154-009_Snow.h5
+   -> candidate: Snow__000002.h5
+   -> candidate: Snow__000002__c545daf6-s188-005_Snow.h5
+   -> candidate: Snow__000003.h5
+   -> candidate: Snow__000003__c545daf6-s220-025_Snow.h5
+   -> candidate: Snow__000004.h5
+   -> candidate: Snow__000004__c545daf6-s273-001_Snow.h5
+   -> candidate: Snow__000005.h5
+

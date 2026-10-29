@@ -1,0 +1,35 @@
+# Python
+venv*/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Node / React
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Java / Spring Boot
+backend-auth/**/target/
+backend-auth/**/.settings/
+backend-auth/**/.classpath
+backend-auth/**/.project
+
+# Certificates / secrets
+certs/
+backend-auth/**/keystore.p12
+*.pem
+*.p12
+.env
+*.env
+
+# Data & models (raw, heavy)
+data/
+models/
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
